@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+    <!-- ----------------------------fonts-------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&amp;display=swap" rel="stylesheet" class="">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+
+
+
+
+<body>
+
+    <div
+        class="loading position-fixed start-0 end-0 top-0 bottom-0 bg-black z-3 justify-content-center align-items-center">
+        <i class="fa fa-spinner fa-spin fa-5x"></i>
+    </div>
+    <!-- ----------------------navbar--------------------------- -->
+    <div class="nav-cont position-fixed z-2 min-vh-100 d-flex ">
+        <div class="side-list bg-black p-4 min-vh-100  - d-flex flex-column justify-content-between text-white">
+            <div class="menu ">
+                <ul class="list-unstyled">
+                    <li class="py-2 position-relative"><a onclick="nowPlaying();closeMenu()">Nowplaying</a></li>
+                    <li class="py-2 position-relative"><a onclick="getPopular();closeMenu()">Popular</a></li>
+                    <li class="py-2 position-relative"><a onclick="getTopRated();closeMenu()">TopRated</a></li>
+                    <li class="py-2 position-relative"><a onclick="nowPlaying();closeMenu()">Trending</a></li>
+                    <li class="py-2 position-relative"><a onclick="getUpComing();closeMenu()">Upcoming</a></li>
+                    <li class="py-2 position-relative white "><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="copyrights ">
+                <div class="social">
+                    <a href="#"><i class="fa-brands fa-facebook-f white"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter white"></i></a>
+                    <a href="#"><i class="fa-solid fa-globe white"></i></a>
+                </div>
+                <p class="pt-3">Copyright © 2024 All Rights Reserved. <br>
+                    Created by
+                    <a href="https://www.linkedin.com/in/fedaa-mosaad-8592aa31a/" class="text-danger fw-bold"
+                        target="_blank">Fedaa Mosaad</a>
+                </p>
+            </div>
+        </div>
+        <div id="side-nav"
+            class=" bg-white  d-flex align-content-between flex-column justify-content-between text-center">
+            <div class="nav-logo mt-4">
+                <img src="images/logo.png" class=" w-50" alt="logo">
+            </div>
+            <div class="nav-list">
+                <i class="fa-solid open-menu fa-align-justify fs-1"></i>
+            </div>
+            <div class="nav-items flex-column fs-4 d-flex mb-4">
+                <i class="fa-solid fa-globe mb-2 "></i>
+                <i class="fa-solid fa-share-nodes "></i>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------main--------------------------- -->
+    <section id="hero" class="container py-5">
+        <input id="search" onkeyup="search(this.value)" type="search" placeholder="Search"
+            class="form-control w-50 mx-auto bg-transparent rounded-5 text-white  shadow-none border-white px-3">
+        <div class="row mt-3 g-4 text-white ms-2" id="rowData">
+
+        </div>
+    </section>
+    <!-- ----------------------contact--------------------------- -->
+    <section id="contact" class="container text-white py-5">
+        <h2>Contact US</h2>
+        <form>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <input type="text" onkeyup="validations()" required id="name" class="form-control mt-4"
+                        placeholder="Enter Your Name">
+                    <p Class="error" class="animate__animated"></p>
+                </div>
+                <div class="col-md-6">
+                    <input type="email" onkeyup="validations()" required id="email" class="form-control mt-4"
+                        placeholder="Enter Your Email">
+                    <p Class="error" class="animate__animated"></p>
+                </div>
+                <div class="col-md-6">
+                    <input type="number" onkeyup="validations()" required id="phone" class="form-control mt-4"
+                        placeholder="Enter Your Phone">
+                    <p Class="error" class="animate__animated"></p>
+                </div>
+                <div class="col-md-6">
+                    <input type="number" onkeyup="validations()" required id="age" class="form-control mt-4"
+                        placeholder="Enter Your Age">
+                    <p Class="error" class="animate__animated"></p>
+                </div>
+                <div class="col-md-6">
+                    <input type="password" onkeyup="validations()" required id="password" class="form-control mt-4"
+                        placeholder="Enter Your Password">
+                    <p Class="error" class="animate__animated"></p>
+                </div>
+                <div class="col-md-6">
+                    <input type="password" onkeyup="validations()" required id="repassword" class="form-control mt-4"
+                        placeholder="ReEnter Password">
+                    <p Class="error" class="animate__animated"></p>
+                </div>
+                <div class="col-md-12  mt-4">
+                    <button type="submit"
+                        class="form-btn rounded-2 mb-3 ms-2 px-3 py-2 animate__animated">Submit</button>
+                </div>
+        </form>
+        </div>
+    </section>
+
+    <a id="arrow" href="#hero">
+
+        <i class="fa-solid fa-arrow-up fs-2"></i></a>
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+.side-list {
+    background-color: #0d0d0d;
+    overflow: hidden;
+    font-family: 'Segoe UI Light';
+}
+
+.list-unstyled {
+    transition: all 0.5s ease-in-out;
+}
+
+.nav-cont i,
+a {
+    cursor: pointer;
+}
+
+
+
+#search::placeholder {
+    color: white;
+}
+
+.loading {
+    display: flex;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+li:hover,
+.nav-cont li:hover a {
+    color: red;
+}
+
+.movie {
+    width: 90%;
+    /* transition: all 0.5s ease-in-out; */
+}
+
+.movie img {
+    transition: all 0.5s ease-in-out;
+
+}
+
+.movie:hover .overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+.movie:hover {
+    /* transform: scale(1.05) ; */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.form-btn {
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.form-btn:hover {
+    background-color: white;
+    color: #000;
+}
+
+#contact .form-control::placeholder {
+    color: #6d747e;
+    text-align: center;
+}
+
+#contact .form-control {
+    box-shadow: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    border-color: #CED4DA;
+    border-radius: 0;
+    color: #fff;
+    transition: all 0.5s;
+}
+
+.row {
+    grid-row-start: 61px;
+}
+
+.movie:hover img {
+    transform: rotate(5deg) scale(1.25);
+    filter: blur(3px);
+}
+
+.movie:hover.overlay p {
+
+    animation: flipInX;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s;
+
+}
+
+.circle-vote h3 {
+    border: 2px solid;
+}
+
+.nav-cont .white,
+.white a {
+    color: white;
+    text-decoration: none;
+}
+
+#arrow {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px #ccc;
+    margin: 17px;
+    background: white;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+
+    bottom: -150px;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+#arrow.show-arrow {
+
+    bottom: 0;
+    opacity: 1;
+    transition: all .5s ease;
+}
